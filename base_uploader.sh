@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull
+
 python3 base_downloader.py
 
 git add .
