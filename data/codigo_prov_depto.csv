@@ -1,0 +1,551 @@
+"prov_name","prov_code","name","codigo"
+"Ciudad Autónoma de Buenos Aires",2,"Sin especificar",0
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 1",1
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 2",2
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 3",3
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 4",4
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 5",5
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 6",6
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 7",7
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 8",8
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 9",9
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 10",10
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 11",11
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 12",12
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 13",13
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 14",14
+"Ciudad Autónoma de Buenos Aires",2,"Comuna 15",15
+"Buenos Aires",6,"Sin especificar",0
+"Buenos Aires",6,"Adolfo Alsina",7
+"Buenos Aires",6,"Adolfo Gonzales Chaves",14
+"Buenos Aires",6,"Alberti",21
+"Buenos Aires",6,"Almirante Brown",28
+"Buenos Aires",6,"Avellaneda",35
+"Buenos Aires",6,"Ayacucho",42
+"Buenos Aires",6,"Azul",49
+"Buenos Aires",6,"Bahía Blanca",56
+"Buenos Aires",6,"Balcarce",63
+"Buenos Aires",6,"Baradero",70
+"Buenos Aires",6,"Arrecifes",77
+"Buenos Aires",6,"Benito Juárez",84
+"Buenos Aires",6,"Berazategui",91
+"Buenos Aires",6,"Berisso",98
+"Buenos Aires",6,"Bolívar",105
+"Buenos Aires",6,"Bragado",112
+"Buenos Aires",6,"Brandsen",119
+"Buenos Aires",6,"Campana",126
+"Buenos Aires",6,"Cañuelas",134
+"Buenos Aires",6,"Capitán Sarmiento",140
+"Buenos Aires",6,"Carlos Casares",147
+"Buenos Aires",6,"Carlos Tejedor",154
+"Buenos Aires",6,"Carmen de Areco",161
+"Buenos Aires",6,"Castelli",168
+"Buenos Aires",6,"Colón",175
+"Buenos Aires",6,"Coronel de Marina L. Rosales",182
+"Buenos Aires",6,"Coronel Dorrego",189
+"Buenos Aires",6,"Coronel Pringles",196
+"Buenos Aires",6,"Coronel Suárez",203
+"Buenos Aires",6,"Chacabuco",210
+"Buenos Aires",6,"Chascomús",217
+"Buenos Aires",6,"Chivilcoy",224
+"Buenos Aires",6,"Daireaux",231
+"Buenos Aires",6,"Dolores",238
+"Buenos Aires",6,"Ensenada",245
+"Buenos Aires",6,"Escobar",252
+"Buenos Aires",6,"Esteban Echeverría",260
+"Buenos Aires",6,"Exaltación de la Cruz",266
+"Buenos Aires",6,"Ezeiza",270
+"Buenos Aires",6,"Florencio Varela",274
+"Buenos Aires",6,"Florentino Ameghino",277
+"Buenos Aires",6,"General Alvarado",280
+"Buenos Aires",6,"General Alvear",287
+"Buenos Aires",6,"General Arenales",294
+"Buenos Aires",6,"General Belgrano",301
+"Buenos Aires",6,"General Guido",308
+"Buenos Aires",6,"General Juan Madariaga",315
+"Buenos Aires",6,"General La Madrid",322
+"Buenos Aires",6,"General Las Heras",329
+"Buenos Aires",6,"General Lavalle",336
+"Buenos Aires",6,"General Paz",343
+"Buenos Aires",6,"General Pinto",351
+"Buenos Aires",6,"General Pueyrredón",357
+"Buenos Aires",6,"General Rodríguez",364
+"Buenos Aires",6,"General San Martín",371
+"Buenos Aires",6,"General Viamonte",385
+"Buenos Aires",6,"General Villegas",392
+"Buenos Aires",6,"Guaminí",399
+"Buenos Aires",6,"Hipólito Yrigoyen",406
+"Buenos Aires",6,"Hurlingham",408
+"Buenos Aires",6,"Ituzaingó",410
+"Buenos Aires",6,"José C. Paz",412
+"Buenos Aires",6,"Junín",413
+"Buenos Aires",6,"La Costa",420
+"Buenos Aires",6,"La Matanza",427
+"Buenos Aires",6,"Lanús",434
+"Buenos Aires",6,"La Plata",441
+"Buenos Aires",6,"Laprida",448
+"Buenos Aires",6,"Las Flores",455
+"Buenos Aires",6,"Leandro N. Alem",462
+"Buenos Aires",6,"Lezama",466
+"Buenos Aires",6,"Lincoln",469
+"Buenos Aires",6,"Lobería",476
+"Buenos Aires",6,"Lobos",483
+"Buenos Aires",6,"Lomas de Zamora",490
+"Buenos Aires",6,"Luján",497
+"Buenos Aires",6,"Magdalena",505
+"Buenos Aires",6,"Maipú",511
+"Buenos Aires",6,"Malvinas Argentinas",515
+"Buenos Aires",6,"Mar Chiquita",518
+"Buenos Aires",6,"Marcos Paz",525
+"Buenos Aires",6,"Mercedes",532
+"Buenos Aires",6,"Merlo",539
+"Buenos Aires",6,"Monte",547
+"Buenos Aires",6,"Monte Hermoso",553
+"Buenos Aires",6,"Moreno",560
+"Buenos Aires",6,"Morón",568
+"Buenos Aires",6,"Navarro",574
+"Buenos Aires",6,"Necochea",581
+"Buenos Aires",6,"9 de Julio",588
+"Buenos Aires",6,"Olavarría",595
+"Buenos Aires",6,"Patagones",602
+"Buenos Aires",6,"Pehuajó",609
+"Buenos Aires",6,"Pellegrini",616
+"Buenos Aires",6,"Pergamino",623
+"Buenos Aires",6,"Pila",630
+"Buenos Aires",6,"Pilar",638
+"Buenos Aires",6,"Pinamar",644
+"Buenos Aires",6,"Presidente Perón",648
+"Buenos Aires",6,"Puán",651
+"Buenos Aires",6,"Punta Indio",655
+"Buenos Aires",6,"Quilmes",658
+"Buenos Aires",6,"Ramallo",665
+"Buenos Aires",6,"Rauch",672
+"Buenos Aires",6,"Rivadavia",679
+"Buenos Aires",6,"Rojas",686
+"Buenos Aires",6,"Roque Pérez",693
+"Buenos Aires",6,"Saavedra",700
+"Buenos Aires",6,"Saladillo",707
+"Buenos Aires",6,"Salto",714
+"Buenos Aires",6,"Salliqueló",721
+"Buenos Aires",6,"San Andrés de Giles",728
+"Buenos Aires",6,"San Antonio de Areco",735
+"Buenos Aires",6,"San Cayetano",742
+"Buenos Aires",6,"San Fernando",749
+"Buenos Aires",6,"San Isidro",756
+"Buenos Aires",6,"San Miguel",760
+"Buenos Aires",6,"San Nicolás",763
+"Buenos Aires",6,"San Pedro",770
+"Buenos Aires",6,"San Vicente",778
+"Buenos Aires",6,"Suipacha",784
+"Buenos Aires",6,"Tandil",791
+"Buenos Aires",6,"Tapalqué",798
+"Buenos Aires",6,"Tigre",805
+"Buenos Aires",6,"Tordillo",812
+"Buenos Aires",6,"Tornquist",819
+"Buenos Aires",6,"Trenque Lauquen",826
+"Buenos Aires",6,"Tres Arroyos",833
+"Buenos Aires",6,"Tres de Febrero",840
+"Buenos Aires",6,"Tres Lomas",847
+"Buenos Aires",6,"25 de Mayo",854
+"Buenos Aires",6,"Vicente López",861
+"Buenos Aires",6,"Villa Gesell",868
+"Buenos Aires",6,"Villarino",875
+"Buenos Aires",6,"Zárate",882
+"Catamarca",10,"Sin especificar",0
+"Catamarca",10,"Ambato",7
+"Catamarca",10,"Ancasti",14
+"Catamarca",10,"Andalgalá",21
+"Catamarca",10,"Antofagasta de la Sierra",28
+"Catamarca",10,"Belén",35
+"Catamarca",10,"Capayán",42
+"Catamarca",10,"Capital",49
+"Catamarca",10,"El Alto",56
+"Catamarca",10,"Fray Mamerto Esquiú",63
+"Catamarca",10,"La Paz",70
+"Catamarca",10,"Paclín",77
+"Catamarca",10,"Pomán",84
+"Catamarca",10,"Santa María",91
+"Catamarca",10,"Santa Rosa",98
+"Catamarca",10,"Tinogasta",105
+"Catamarca",10,"Valle Viejo",112
+"Córdoba",14,"Sin especificar",0
+"Córdoba",14,"Calamuchita",7
+"Córdoba",14,"Capital",14
+"Córdoba",14,"Colón",21
+"Córdoba",14,"Cruz del Eje",28
+"Córdoba",14,"General Roca",35
+"Córdoba",14,"General San Martín",42
+"Córdoba",14,"Ischilín",49
+"Córdoba",14,"Juárez Celman",56
+"Córdoba",14,"Marcos Juárez",63
+"Córdoba",14,"Minas",70
+"Córdoba",14,"Pocho",77
+"Córdoba",14,"Presidente Roque Sáenz Peña",84
+"Córdoba",14,"Punilla",91
+"Córdoba",14,"Río Cuarto",98
+"Córdoba",14,"Río Primero",105
+"Córdoba",14,"Río Seco",112
+"Córdoba",14,"Río Segundo",119
+"Córdoba",14,"San Alberto",126
+"Córdoba",14,"San Javier",133
+"Córdoba",14,"San Justo",140
+"Córdoba",14,"Santa María",147
+"Córdoba",14,"Sobremonte",154
+"Córdoba",14,"Tercero Arriba",161
+"Córdoba",14,"Totoral",168
+"Córdoba",14,"Tulumba",175
+"Córdoba",14,"Unión",182
+"Corrientes",18,"Sin especificar",0
+"Corrientes",18,"Bella Vista",7
+"Corrientes",18,"Berón de Astrada",14
+"Corrientes",18,"Capital",21
+"Corrientes",18,"Concepción",28
+"Corrientes",18,"Curuzú Cuatiá",35
+"Corrientes",18,"Empedrado",42
+"Corrientes",18,"Esquina",49
+"Corrientes",18,"General Alvear",56
+"Corrientes",18,"General Paz",63
+"Corrientes",18,"Goya",70
+"Corrientes",18,"Itatí",77
+"Corrientes",18,"Ituzaingó",84
+"Corrientes",18,"Lavalle",91
+"Corrientes",18,"Mburucuyá",98
+"Corrientes",18,"Mercedes",105
+"Corrientes",18,"Monte Caseros",112
+"Corrientes",18,"Paso de los Libres",119
+"Corrientes",18,"Saladas",126
+"Corrientes",18,"San Cosme",133
+"Corrientes",18,"San Luis del Palmar",140
+"Corrientes",18,"San Martín",147
+"Corrientes",18,"San Miguel",154
+"Corrientes",18,"San Roque",161
+"Corrientes",18,"Santo Tomé",168
+"Corrientes",18,"Sauce",175
+"Chaco",22,"Sin especificar",0
+"Chaco",22,"Almirante Brown",7
+"Chaco",22,"Bermejo",14
+"Chaco",22,"Comandante Fernández",21
+"Chaco",22,"Chacabuco",28
+"Chaco",22,"12 de Octubre",36
+"Chaco",22,"2 de Abril",39
+"Chaco",22,"Fray Justo Santa María de Oro",43
+"Chaco",22,"General Belgrano",49
+"Chaco",22,"General Donovan",56
+"Chaco",22,"General Güemes",63
+"Chaco",22,"Independencia",70
+"Chaco",22,"Libertad",77
+"Chaco",22,"Libertador General San Martín",84
+"Chaco",22,"Maipú",91
+"Chaco",22,"Mayor Luis J. Fontana",98
+"Chaco",22,"9 de Julio",105
+"Chaco",22,"O' Higgins",112
+"Chaco",22,"Presidencia de la Plaza",119
+"Chaco",22,"1º de Mayo",126
+"Chaco",22,"Quitilipi",133
+"Chaco",22,"San Fernando",140
+"Chaco",22,"San Lorenzo",147
+"Chaco",22,"Sargento Cabral",154
+"Chaco",22,"Tapenagá",161
+"Chaco",22,"25 de Mayo",168
+"Chubut",26,"Sin especificar",0
+"Chubut",26,"Biedma",7
+"Chubut",26,"Cushamen",14
+"Chubut",26,"Escalante",21
+"Chubut",26,"Florentino Ameghino",28
+"Chubut",26,"Futaleufú",35
+"Chubut",26,"Gaiman",42
+"Chubut",26,"Gastre",49
+"Chubut",26,"Languiñeo",56
+"Chubut",26,"Mártires",63
+"Chubut",26,"Paso de Indios",70
+"Chubut",26,"Rawson",77
+"Chubut",26,"Río Senguer",84
+"Chubut",26,"Sarmiento",91
+"Chubut",26,"Tehuelches",98
+"Chubut",26,"Telsen",105
+"Entre Ríos",30,"Sin especificar",0
+"Entre Ríos",30,"Colón",8
+"Entre Ríos",30,"Concordia",15
+"Entre Ríos",30,"Diamante",21
+"Entre Ríos",30,"Federación",28
+"Entre Ríos",30,"Federal",35
+"Entre Ríos",30,"Feliciano",42
+"Entre Ríos",30,"Gualeguay",49
+"Entre Ríos",30,"Gualeguaychú",56
+"Entre Ríos",30,"Islas del Ibicuy",63
+"Entre Ríos",30,"La Paz",70
+"Entre Ríos",30,"Nogoyá",77
+"Entre Ríos",30,"Paraná",84
+"Entre Ríos",30,"San Salvador",88
+"Entre Ríos",30,"Tala",91
+"Entre Ríos",30,"Uruguay",98
+"Entre Ríos",30,"Victoria",105
+"Entre Ríos",30,"Villaguay",113
+"Formosa",34,"Sin especificar",0
+"Formosa",34,"Bermejo",7
+"Formosa",34,"Formosa",14
+"Formosa",34,"Laishi",21
+"Formosa",34,"Matacos",28
+"Formosa",34,"Patiño",35
+"Formosa",34,"Pilagás",42
+"Formosa",34,"Pilcomayo",49
+"Formosa",34,"Pirané",56
+"Formosa",34,"Ramón Lista",63
+"Jujuy",38,"Sin especificar",0
+"Jujuy",38,"Cochinoca",7
+"Jujuy",38,"El Carmen",14
+"Jujuy",38,"Dr. Manuel Belgrano",21
+"Jujuy",38,"Humahuaca",28
+"Jujuy",38,"Ledesma",35
+"Jujuy",38,"Palpalá",42
+"Jujuy",38,"Rinconada",49
+"Jujuy",38,"San Antonio",56
+"Jujuy",38,"San Pedro",63
+"Jujuy",38,"Santa Bárbara",70
+"Jujuy",38,"Santa Catalina",77
+"Jujuy",38,"Susques",84
+"Jujuy",38,"Tilcara",94
+"Jujuy",38,"Tumbaya",98
+"Jujuy",38,"Valle Grande",105
+"Jujuy",38,"Yavi",112
+"La Pampa",42,"Sin especificar",0
+"La Pampa",42,"Atreucó",7
+"La Pampa",42,"Caleu Caleu",14
+"La Pampa",42,"Capital",21
+"La Pampa",42,"Catriló",28
+"La Pampa",42,"Conhelo",35
+"La Pampa",42,"Curacó",42
+"La Pampa",42,"Chalileo",49
+"La Pampa",42,"Chapaleufú",56
+"La Pampa",42,"Chicalcó",63
+"La Pampa",42,"Guatraché",70
+"La Pampa",42,"Hucal",77
+"La Pampa",42,"Lihuel Calel",84
+"La Pampa",42,"Limay Mahuida",91
+"La Pampa",42,"Loventué",98
+"La Pampa",42,"Maracó",105
+"La Pampa",42,"Puelén",112
+"La Pampa",42,"Quemú Quemú",119
+"La Pampa",42,"Rancul",126
+"La Pampa",42,"Realicó",133
+"La Pampa",42,"Toay",140
+"La Pampa",42,"Trenel",147
+"La Pampa",42,"Utracán",154
+"La Rioja",46,"Sin especificar",0
+"La Rioja",46,"Arauco",7
+"La Rioja",46,"Capital",14
+"La Rioja",46,"Castro Barros",21
+"La Rioja",46,"Coronel Felipe Varela",28
+"La Rioja",46,"Chamical",35
+"La Rioja",46,"Chilecito",42
+"La Rioja",46,"Famatina",49
+"La Rioja",46,"General Angel V. Peñaloza",56
+"La Rioja",46,"General Belgrano",63
+"La Rioja",46,"General Juan F. Quiroga",70
+"La Rioja",46,"General Lamadrid",77
+"La Rioja",46,"General Ocampo",84
+"La Rioja",46,"General San Martín",91
+"La Rioja",46,"Vinchina",98
+"La Rioja",46,"Independencia",105
+"La Rioja",46,"Rosario Vera Peñaloza",112
+"La Rioja",46,"San Blas de los Sauces",119
+"La Rioja",46,"Sanagasta",126
+"Mendoza",50,"Sin especificar",0
+"Mendoza",50,"Capital",7
+"Mendoza",50,"General Alvear",14
+"Mendoza",50,"Godoy Cruz",21
+"Mendoza",50,"Guaymallén",28
+"Mendoza",50,"Junín",35
+"Mendoza",50,"La Paz",42
+"Mendoza",50,"Las Heras",49
+"Mendoza",50,"Lavalle",56
+"Mendoza",50,"Luján de Cuyo",63
+"Mendoza",50,"Maipú",70
+"Mendoza",50,"Malargüe",77
+"Mendoza",50,"Rivadavia",84
+"Mendoza",50,"San Carlos",91
+"Mendoza",50,"San Martín",98
+"Mendoza",50,"San Rafael",105
+"Mendoza",50,"Santa Rosa",112
+"Mendoza",50,"Tunuyán",119
+"Mendoza",50,"Tupungato",126
+"Misiones",54,"Sin especificar",0
+"Misiones",54,"Apóstoles",7
+"Misiones",54,"Cainguás",14
+"Misiones",54,"Candelaria",21
+"Misiones",54,"Capital",28
+"Misiones",54,"Concepción",35
+"Misiones",54,"Eldorado",42
+"Misiones",54,"General Manuel Belgrano",49
+"Misiones",54,"Guaraní",56
+"Misiones",54,"Iguazú",63
+"Misiones",54,"Leandro N. Alem",70
+"Misiones",54,"Libertador Grl. San Martín",77
+"Misiones",54,"Montecarlo",84
+"Misiones",54,"Oberá",91
+"Misiones",54,"San Ignacio",98
+"Misiones",54,"San Javier",105
+"Misiones",54,"San Pedro",112
+"Misiones",54,"25 de Mayo",119
+"Neuquén",58,"Sin especificar",0
+"Neuquén",58,"Aluminé",7
+"Neuquén",58,"Añelo",14
+"Neuquén",58,"Catán Lil",21
+"Neuquén",58,"Collón Curá",28
+"Neuquén",58,"Confluencia",35
+"Neuquén",58,"Chos Malal",42
+"Neuquén",58,"Huiliches",49
+"Neuquén",58,"Lácar",56
+"Neuquén",58,"Loncopué",63
+"Neuquén",58,"Los Lagos",70
+"Neuquén",58,"Minas",77
+"Neuquén",58,"Ñorquín",84
+"Neuquén",58,"Pehuenches",91
+"Neuquén",58,"Picún Leufú",98
+"Neuquén",58,"Picunches",105
+"Neuquén",58,"Zapala",112
+"Río Negro",62,"Sin especificar",0
+"Río Negro",62,"Adolfo Alsina",7
+"Río Negro",62,"Avellaneda",14
+"Río Negro",62,"Bariloche",21
+"Río Negro",62,"Conesa",28
+"Río Negro",62,"El Cuy",35
+"Río Negro",62,"General Roca",42
+"Río Negro",62,"9 de Julio",49
+"Río Negro",62,"Ñorquincó",56
+"Río Negro",62,"Pichi Mahuida",63
+"Río Negro",62,"Pilcaniyeu",70
+"Río Negro",62,"San Antonio",77
+"Río Negro",62,"Valcheta",84
+"Río Negro",62,"25 de Mayo",91
+"Salta",66,"Sin especificar",0
+"Salta",66,"Anta",7
+"Salta",66,"Cachi",14
+"Salta",66,"Cafayate",21
+"Salta",66,"Capital",28
+"Salta",66,"Cerrillos",35
+"Salta",66,"Chicoana",42
+"Salta",66,"General Güemes",49
+"Salta",66,"Grl. José de San Martín",56
+"Salta",66,"Guachipas",63
+"Salta",66,"Iruya",70
+"Salta",66,"La Caldera",77
+"Salta",66,"La Candelaria",84
+"Salta",66,"La Poma",91
+"Salta",66,"La Viña",98
+"Salta",66,"Los Andes",105
+"Salta",66,"Metán",112
+"Salta",66,"Molinos",119
+"Salta",66,"Orán",126
+"Salta",66,"Rivadavia",133
+"Salta",66,"Rosario de la Frontera",140
+"Salta",66,"Rosario de Lerma",147
+"Salta",66,"San Carlos",154
+"Salta",66,"Santa Victoria",161
+"San Juan",70,"Sin especificar",0
+"San Juan",70,"Albardón",7
+"San Juan",70,"Angaco",14
+"San Juan",70,"Calingasta",21
+"San Juan",70,"Capital",28
+"San Juan",70,"Caucete",35
+"San Juan",70,"Chimbas",42
+"San Juan",70,"Iglesia",49
+"San Juan",70,"Jáchal",56
+"San Juan",70,"9 de Julio",63
+"San Juan",70,"Pocito",70
+"San Juan",70,"Rawson",77
+"San Juan",70,"Rivadavia",84
+"San Juan",70,"San Martín",91
+"San Juan",70,"Santa Lucía",98
+"San Juan",70,"Sarmiento",105
+"San Juan",70,"Ullúm",112
+"San Juan",70,"Valle Fértil",119
+"San Juan",70,"25 de Mayo",126
+"San Juan",70,"Zonda",133
+"San Luis",74,"Sin especificar",0
+"San Luis",74,"Ayacucho",7
+"San Luis",74,"Belgrano",14
+"San Luis",74,"Coronel Pringles",21
+"San Luis",74,"Chacabuco",28
+"San Luis",74,"General Pedernera",35
+"San Luis",74,"Gobernador Dupuy",42
+"San Luis",74,"Junín",49
+"San Luis",74,"La Capital",56
+"San Luis",74,"Libertador General San Martín",63
+"Santa Cruz",78,"Sin especificar",0
+"Santa Cruz",78,"Corpen Aike",7
+"Santa Cruz",78,"Deseado",14
+"Santa Cruz",78,"Güer Aike",21
+"Santa Cruz",78,"Lago Argentino",28
+"Santa Cruz",78,"Lago Buenos Aires",35
+"Santa Cruz",78,"Magallanes",42
+"Santa Cruz",78,"Río Chico",49
+"Santa Fe",82,"Sin especificar",0
+"Santa Fe",82,"Belgrano",7
+"Santa Fe",82,"Caseros",14
+"Santa Fe",82,"Castellanos",21
+"Santa Fe",82,"Constitución",28
+"Santa Fe",82,"Garay",35
+"Santa Fe",82,"General López",42
+"Santa Fe",82,"General Obligado",49
+"Santa Fe",82,"Iriondo",56
+"Santa Fe",82,"La Capital",63
+"Santa Fe",82,"Las Colonias",70
+"Santa Fe",82,"9 de Julio",77
+"Santa Fe",82,"Rosario",84
+"Santa Fe",82,"San Cristóbal",91
+"Santa Fe",82,"San Javier",98
+"Santa Fe",82,"San Jerónimo",105
+"Santa Fe",82,"San Justo",112
+"Santa Fe",82,"San Lorenzo",119
+"Santa Fe",82,"San Martín",126
+"Santa Fe",82,"Vera",133
+"Santiago del Estero",86,"Sin especificar",0
+"Santiago del Estero",86,"Aguirre",7
+"Santiago del Estero",86,"Alberdi",14
+"Santiago del Estero",86,"Atamisqui",21
+"Santiago del Estero",86,"Avellaneda",28
+"Santiago del Estero",86,"Banda",35
+"Santiago del Estero",86,"Belgrano",42
+"Santiago del Estero",86,"Capital",49
+"Santiago del Estero",86,"Copo",56
+"Santiago del Estero",86,"Choya",63
+"Santiago del Estero",86,"Figueroa",70
+"Santiago del Estero",86,"General Taboada",77
+"Santiago del Estero",86,"Guasayán",84
+"Santiago del Estero",86,"Jiménez",91
+"Santiago del Estero",86,"Juan F. Ibarra",98
+"Santiago del Estero",86,"Loreto",105
+"Santiago del Estero",86,"Mitre",112
+"Santiago del Estero",86,"Moreno",119
+"Santiago del Estero",86,"Ojo de Agua",126
+"Santiago del Estero",86,"Pellegrini",133
+"Santiago del Estero",86,"Quebrachos",140
+"Santiago del Estero",86,"Río Hondo",147
+"Santiago del Estero",86,"Rivadavia",154
+"Santiago del Estero",86,"Robles",161
+"Santiago del Estero",86,"Salavina",168
+"Santiago del Estero",86,"San Martín",175
+"Santiago del Estero",86,"Sarmiento",182
+"Santiago del Estero",86,"Silípica",189
+"Tucumán",90,"Sin especificar",0
+"Tucumán",90,"Burruyacú",7
+"Tucumán",90,"Cruz Alta",14
+"Tucumán",90,"Chicligasta",21
+"Tucumán",90,"Famaillá",28
+"Tucumán",90,"Graneros",35
+"Tucumán",90,"Juan Bautista Alberdi",42
+"Tucumán",90,"La Cocha",49
+"Tucumán",90,"Leales",56
+"Tucumán",90,"Lules",63
+"Tucumán",90,"Monteros",70
+"Tucumán",90,"Río Chico",77
+"Tucumán",90,"Capital",84
+"Tucumán",90,"Simoca",91
+"Tucumán",90,"Tafí del Valle",98
+"Tucumán",90,"Tafí Viejo",105
+"Tucumán",90,"Trancas",112
+"Tucumán",90,"Yerba Buena",119
+"Tierra del Fuego, Antártida e Islas del Atlántico Sur",94,"Sin especificar",0
+"Tierra del Fuego, Antártida e Islas del Atlántico Sur",94,"Río Grande",7
+"Tierra del Fuego, Antártida e Islas del Atlántico Sur",94,"Ushuaia",14
