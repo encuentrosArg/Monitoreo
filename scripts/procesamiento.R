@@ -1,6 +1,6 @@
 #library(data.table)
 #library(dplyr)
-datos <- fread(unzip("data/Covid19Casos reducido.zip", "Covid19Casos reducido.csv"), encoding = "UTF-8", stringsAsFactors = TRUE)
+datos <- fread(unzip("data/Covid19Casos2021 reducido.zip", "Covid19Casos2021 reducido.csv"), encoding = "UTF-8", stringsAsFactors = TRUE)
 #datos <- fread("data/Covid19Casos2021 reducido.csv", encoding = "UTF-8", stringsAsFactors = TRUE)
 
 #Borro columnas que no nos interesan:
