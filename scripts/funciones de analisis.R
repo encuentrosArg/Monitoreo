@@ -33,8 +33,16 @@ filtro_prov <- function(base, prov){
 
 filtro_region <- function(base, base_codigos, region_name){
   cod <- base_codigos[region == region_name,]
-  cod <- interaction(cod$prov_code, cod$codigo)
-  base[interaction(residencia_provincia_id, residencia_departamento_id) %in% cod,]
+  if(region_name == "AMBA"){
+    bsas <- cod[prov_code == 6, codigo]
+    base[(residencia_provincia_id == 6 & residencia_departamento_id %in% bsas) | residencia_provincia_id == 2,]
+  }else if(region_name == "Buenos Aires no AMBA"){
+    bsas <- cod[prov_code == 6, codigo]
+    base[(residencia_provincia_id == 6 & residencia_departamento_id %in% bsas),]
+  }else{
+    provincias <- unique(cod$prov_code)
+    base[residencia_provincia_id %in% cod,]
+  }
 }
 
 filtro_depto <- function(base, depto){
@@ -49,7 +57,9 @@ confirmados <- function(base){
   relleno <- todas_fechas(min(c$fecha_min), max(c$fecha_min))
   c <- merge(relleno, c, by = "fecha_min", all = TRUE)
   c[ , "conteo" := lapply(.SD, nafill, fill=0), .SDcols = "conteo"]
-  c
+  c %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Cantidad</b>: {conteo}<br>") %>% 
+        map(htmltools::HTML))
 }
 
 
@@ -59,7 +69,9 @@ confirmados_r_edad <- function(base){
   relleno <- todas_fechas_r_edad(min(c$fecha_min), max(c$fecha_min))
   c <- merge(relleno, c, by = c("fecha_min", "r_edad"), all = TRUE)
   c[ , "conteo" := lapply(.SD, nafill, fill=0), .SDcols = "conteo"]
-  c
+  c %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Cantidad</b>: {conteo}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 
@@ -69,7 +81,9 @@ casos_posibles <- function(base){
   relleno <- todas_fechas(min(c$fecha_min), max(c$fecha_min))
   c <- merge(relleno, c, by = "fecha_min", all = TRUE)
   c[ , "conteo" := lapply(.SD, nafill, fill=0), .SDcols = "conteo"]
-  c
+  c %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Cantidad</b>: {conteo}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 
@@ -79,7 +93,9 @@ casos_posibles_r_edad <- function(base){
   relleno <- todas_fechas_r_edad(min(c$fecha_min), max(c$fecha_min))
   c <- merge(relleno, c, by = c("fecha_min", "r_edad"), all = TRUE)
   c[ , "conteo" := lapply(.SD, nafill, fill=0), .SDcols = "conteo"]
-  c
+  c %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Cantidad</b>: {conteo}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 
@@ -89,7 +105,9 @@ fallecidos <- function(base){
   relleno <- todas_fechas(min(f$fecha_fallecimiento), max(f$fecha_fallecimiento), "fecha_fallecimiento")
   f <- merge(relleno, f, by = "fecha_fallecimiento", all = TRUE)
   f[ , "conteo" := lapply(.SD, nafill, fill=0), .SDcols = "conteo"]
-  f
+  f %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Cantidad</b>: {conteo}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 #fallecidos por rango de edad filtrado por fechas, provincia, municipio ----
@@ -98,7 +116,9 @@ fallecidos_r_edad <- function(base){
   relleno <- todas_fechas_r_edad(min(f$fecha_fallecimiento), max(f$fecha_fallecimiento), "fecha_fallecimiento")
   f <- merge(relleno, f, by = c("fecha_fallecimiento", "r_edad"),all = TRUE)
   f[ , "conteo" := lapply(.SD, nafill, fill=0), .SDcols = "conteo"]
-  f
+  f  %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Cantidad</b>: {conteo}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 
@@ -111,7 +131,9 @@ positividad <- function(base_confirmados, base_casos_posibles){
   p <- p[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y))]
   p <- p[, positividad := conteo.x/conteo.y]
   p <- p[, c("fecha_min", "positividad")] 
-  p
+  p %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Positividad</b>: {positividad}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 
@@ -124,7 +146,9 @@ positividad_r_edad <- function(base_confirmados_r_edad, base_casos_posibles_r_ed
   p <- p[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y)), by = "r_edad"]
   p <- p[, positividad := conteo.x/conteo.y]
   p <- p[, c("fecha_min", "r_edad", "positividad")] 
-  p
+  p  %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Positividad</b>: {positividad}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 
@@ -137,7 +161,9 @@ letalidad<- function(base_fallecidos, base_casos_posibles){
   l <- l[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y))]
   l <- l[, letalidad := conteo.x/conteo.y]
   l <- l[, c("fecha_fallecimiento", "letalidad")] 
-  l
+  l  %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Letalidad</b>: {letalidad}<br>") %>% 
+             map(htmltools::HTML))
 }
 
 
@@ -150,6 +176,8 @@ letalidad_r_edad <- function(base_fallecidos_r_edad, base_casos_posibles_r_edad)
   l <- l[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y)), by = "r_edad"]
   l <- l[, letalidad := conteo.x/conteo.y]
   l <- l[, c("fecha_fallecimiento", "r_edad", "letalidad")] 
-  l
+  l %>%
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Letalidad</b>: {letalidad}<br>") %>% 
+             map(htmltools::HTML))
 }
 

@@ -11,7 +11,7 @@
 plot_confirmados <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_min, y = conteo)) +
+    ggplot(aes(x = fecha_min, y = conteo, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Casos confirmados")
   
@@ -26,7 +26,7 @@ plot_confirmados <- function(base){
 plot_confirmados_r_edad <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_min, y = conteo, col = r_edad)) +
+    ggplot(aes(x = fecha_min, y = conteo, col = r_edad, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Casos confirmados") +
     scale_color_discrete(name = "Rango de edades")
@@ -41,7 +41,7 @@ plot_confirmados_r_edad <- function(base){
 plot_casos_posibles <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_min, y = conteo)) +
+    ggplot(aes(x = fecha_min, y = conteo, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Casos posibles")
   
@@ -54,7 +54,7 @@ plot_casos_posibles <- function(base){
 plot_casos_posibles_r_edad <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_min, y = conteo, col = r_edad)) +
+    ggplot(aes(x = fecha_min, y = conteo, col = r_edad, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Casos posibles") +
     scale_color_discrete(name = "Rango de edades")
@@ -69,7 +69,7 @@ plot_casos_posibles_r_edad <- function(base){
 plot_fallecidos <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_fallecimiento, y = conteo)) +
+    ggplot(aes(x = fecha_fallecimiento, y = conteo, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Fallecidos")
   
@@ -83,7 +83,7 @@ plot_fallecidos <- function(base){
 plot_fallecidos_r_edad <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_fallecimiento, y = conteo, col = r_edad)) +
+    ggplot(aes(x = fecha_fallecimiento, y = conteo, col = r_edad, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Fallecidos") +
     scale_color_discrete(name = "Rango de edades")
@@ -98,7 +98,7 @@ plot_fallecidos_r_edad <- function(base){
 plot_positividad <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_min, y = positividad)) +
+    ggplot(aes(x = fecha_min, y = positividad, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Positividad (casos confirmado por cada caso posible)")
   
@@ -112,7 +112,7 @@ plot_positividad <- function(base){
 plot_positividad_r_edad <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_min, y = positividad, col = r_edad)) +
+    ggplot(aes(x = fecha_min, y = positividad, col = r_edad, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Positividad (casos confirmado por cada caso posible)") +
     scale_color_discrete(name = "Rango de edades")
@@ -128,7 +128,7 @@ plot_positividad_r_edad <- function(base){
 plot_letalidad <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_fallecimiento, y = letalidad)) +
+    ggplot(aes(x = fecha_fallecimiento, y = letalidad, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Letalidad (fallecidos por cada caso confirmado)")
   
@@ -142,7 +142,7 @@ plot_letalidad <- function(base){
 plot_letalidad_r_edad <- function(base){
   
   g <- base %>%
-    ggplot(aes(x = fecha_fallecimiento, y = letalidad, col = r_edad)) +
+    ggplot(aes(x = fecha_fallecimiento, y = letalidad, col = r_edad, text = label)) +
     geom_line() +
     labs(x = "Fecha", y = "Letalidad (fallecidos por cada caso confirmado)") +
     scale_color_discrete(name = "Rango de edades")

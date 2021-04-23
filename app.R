@@ -6,6 +6,7 @@ library(tidyverse)
 library(data.table)
 library(plotly)
 library(shinycssloaders)
+library(dashboardthemes)
 
 options(encoding = 'UTF-8')
 options(spinner.color = "#000000", spinner.type = 6, spinner.color.background = "#ffffff", spinner.size = 0.5)
@@ -83,7 +84,7 @@ tabBox_todos <- function(titulo_tab_box){
 
 
 
-header <- dashboardHeader(
+header <- dashboardHeader(title = "Monitoreo COVID-19 hasta donde llega este texto quiero saber",
     dropdownMenu(
         type = "messages",
         messageItem(
@@ -122,6 +123,9 @@ sidebar <- dashboardSidebar(
 
 
 body <- dashboardBody(
+  shinyDashboardThemes(
+    theme = "grey_light"
+  ),
   tabItems(
     tabItem(tabName = "tab_argentina",
             tabBox_todos("Argentina")
@@ -154,6 +158,13 @@ body <- dashboardBody(
             ),
             tabBox_todos("Departamentos")
             )
+    ),
+  fluidRow(
+    column(
+      width = 12,
+      align = "center",
+      img(src='logo_cotera.png', align = "center")
+      )
     )
   )
                 
@@ -163,7 +174,7 @@ body <- dashboardBody(
 
 
 
-ui <- dashboardPage(header, sidebar, body)
+ui <- dashboardPage(header, sidebar, body, title = "Monitoreo COVID-19 COTERA")
 
 
 server <- function(input, output, session){
