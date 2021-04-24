@@ -8,12 +8,12 @@
 
 #Grafico de casos diarios:-----
 #Pensado para usarse con la funcion confirmados()
-plot_confirmados <- function(base){
+plot_confirmados <- function(base, eje_y = "Casos confirmados"){
   
   g <- base %>%
     ggplot(aes(x = fecha_min, y = conteo, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Casos confirmados")
+    labs(x = "Fecha", y = eje_y)
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
     plotly::config(locale = "es")
@@ -23,12 +23,12 @@ plot_confirmados <- function(base){
 
 #Grafico de casos diarios por rango de edad:-----
 #pensado para usarse con la funcion confirmados_r_edad()
-plot_confirmados_r_edad <- function(base){
+plot_confirmados_r_edad <- function(base, eje_y = "Casos confirmados"){
   
   g <- base %>%
     ggplot(aes(x = fecha_min, y = conteo, col = r_edad, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Casos confirmados") +
+    labs(x = "Fecha", y = eje_y) +
     scale_color_discrete(name = "Rango de edades")
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
@@ -38,12 +38,12 @@ plot_confirmados_r_edad <- function(base){
 
 #Grafico de casos posibles diarios:-----
 #Pensado para usarse con la funcion casos_posibles()
-plot_casos_posibles <- function(base){
+plot_casos_posibles <- function(base, eje_y = "Casos confirmados"){
   
   g <- base %>%
     ggplot(aes(x = fecha_min, y = conteo, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Casos posibles")
+    labs(x = "Fecha", y = eje_y)
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
     plotly::config(locale = "es")
@@ -51,12 +51,12 @@ plot_casos_posibles <- function(base){
 
 #Grafico de casos posibles diarios por rango de edad:-----
 #pensado para usarse con la funcion casos_posibles_r_edad()
-plot_casos_posibles_r_edad <- function(base){
+plot_casos_posibles_r_edad <- function(base, eje_y = "Casos confirmados"){
   
   g <- base %>%
     ggplot(aes(x = fecha_min, y = conteo, col = r_edad, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Casos posibles") +
+    labs(x = "Fecha", y = eje_y) +
     scale_color_discrete(name = "Rango de edades")
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
@@ -66,12 +66,12 @@ plot_casos_posibles_r_edad <- function(base){
 
 #Grafico de fallecidos diarios:-----
 #Pensado para usarse con la funcion fallecidos()
-plot_fallecidos <- function(base){
+plot_fallecidos <- function(base, eje_y = "Casos confirmados"){
   
   g <- base %>%
     ggplot(aes(x = fecha_fallecimiento, y = conteo, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Fallecidos")
+    labs(x = "Fecha", y = eje_y)
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
     plotly::config(locale = "es")
@@ -80,12 +80,12 @@ plot_fallecidos <- function(base){
 
 #Grafico de fallecidos diarios por rango de edad:-----
 #pensado para usarse con la funcion fallecidos_r_edad()
-plot_fallecidos_r_edad <- function(base){
+plot_fallecidos_r_edad <- function(base, eje_y = "Casos confirmados"){
   
   g <- base %>%
     ggplot(aes(x = fecha_fallecimiento, y = conteo, col = r_edad, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Fallecidos") +
+    labs(x = "Fecha", y = eje_y) +
     scale_color_discrete(name = "Rango de edades")
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%

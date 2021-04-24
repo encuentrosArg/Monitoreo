@@ -37,6 +37,14 @@ tabBox_todos <- function(titulo_tab_box){
                                   column(width = 6,
                                          align = "center",
                                          plotly::plotlyOutput(paste0('plot_confirmados_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                                ),
+                                fluidRow(
+                                  column(width = 6,
+                                         align = "center",
+                                         plotly::plotlyOutput(paste0('plot_confirmados_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
+                                  column(width = 6,
+                                         align = "center",
+                                         plotly::plotlyOutput(paste0('plot_confirmados_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
                                 )
                        ),
                        tabPanel("Casos posibles", 
@@ -47,6 +55,14 @@ tabBox_todos <- function(titulo_tab_box){
                                   column(width = 6,
                                          align = "center",
                                          plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                                ),
+                                fluidRow(
+                                  column(width = 6,
+                                         align = "center",
+                                         plotly::plotlyOutput(paste0('plot_casos_posibles_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
+                                  column(width = 6,
+                                         align = "center",
+                                         plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
                                 )
                        ),
                        tabPanel("Fallecidos", 
@@ -57,6 +73,14 @@ tabBox_todos <- function(titulo_tab_box){
                                   column(width = 6,
                                          align = "center",
                                          plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                                ),
+                                fluidRow(
+                                  column(width = 6,
+                                         align = "center",
+                                         plotly::plotlyOutput(paste0('plot_fallecidos_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
+                                  column(width = 6,
+                                         align = "center",
+                                         plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
                                 )
                        ),
                        tabPanel("Positividad", 
@@ -97,6 +121,7 @@ header <- dashboardHeader(title = "Monitoreo COVID-19 hasta donde llega este tex
 
 
 sidebar <- dashboardSidebar(
+  tags$style(HTML(".datepicker {z-index:99999 !important;}")),
     sidebarMenu(id = "leftsidebar",
       menuItem("Argentina", tabName = "tab_argentina"#, icon = icon("argentina"),
                ),
@@ -258,6 +283,11 @@ server <- function(input, output, session){
         
     })
     
+    confirmados_acumulados_reactive <- reactive({
+      confirmados_reactive() %>%
+        confirmados_acumulados()
+    })
+    
     confirmados_r_edad_reactive <- reactive({
         
       req(input$input_fechas)
@@ -285,6 +315,11 @@ server <- function(input, output, session){
             confirmados_r_edad()
         }
         
+    })
+    
+    confirmados_r_edad_acumulados_reactive <- reactive({
+      confirmados_r_edad_reactive() %>%
+        confirmados_r_edad_acumulados()
     })
     
     casos_posibles_reactive <- reactive({
@@ -316,6 +351,11 @@ server <- function(input, output, session){
         
     })
     
+    casos_posibles_acumulados_reactive <- reactive({
+      casos_posibles_reactive() %>%
+        casos_posibles_acumulados()
+    })
+    
     casos_posibles_r_edad_reactive <- reactive({
         
         req(input$input_fechas)
@@ -343,6 +383,11 @@ server <- function(input, output, session){
             casos_posibles_r_edad()
         }
         
+    })
+    
+    casos_posibles_r_edad_acumulados_reactive <- reactive({
+      casos_posibles_r_edad_reactive() %>%
+        casos_posibles_r_edad_acumulados()
     })
     
     fallecidos_reactive <- reactive({
@@ -374,6 +419,11 @@ server <- function(input, output, session){
       
     })
     
+    fallecidos_acumulados_reactive <- reactive({
+      fallecidos_reactive() %>%
+        fallecidos_acumulados()
+    })
+    
     fallecidos_r_edad_reactive <- reactive({
       
       req(input$input_fechas)
@@ -400,6 +450,11 @@ server <- function(input, output, session){
           fallecidos_r_edad()
       }
       
+    })
+    
+    fallecidos_r_edad_acumulados_reactive <- reactive({
+      fallecidos_r_edad_reactive() %>%
+        fallecidos_r_edad_acumulados()
     })
     
     positividad_reactive <- reactive({
@@ -467,6 +522,16 @@ server <- function(input, output, session){
         plot_confirmados_r_edad()
     })
     
+    output$plot_confirmados_acumulados_Argentina <- renderPlotly({
+      confirmados_acumulados_reactive() %>%
+        plot_confirmados(eje_y = "Casos confirmados acumulados")
+    })
+    
+    output$plot_confirmados_r_edad_acumulados_Argentina <- renderPlotly({
+      confirmados_r_edad_acumulados_reactive() %>%
+        plot_confirmados_r_edad(eje_y = "Casos confirmados acumulados")
+    })
+    
     output$plot_casos_posibles_Argentina <- renderPlotly({
       casos_posibles_reactive() %>%
         plot_casos_posibles()
@@ -477,6 +542,16 @@ server <- function(input, output, session){
         plot_casos_posibles_r_edad()
     })
     
+    output$plot_casos_posibles_acumulados_Argentina <- renderPlotly({
+      casos_posibles_acumulados_reactive() %>%
+        plot_casos_posibles(eje_y = "Casos posibles acumulados")
+    })
+    
+    output$plot_casos_posibles_r_edad_acumulados_Argentina <- renderPlotly({
+      casos_posibles_r_edad_acumulados_reactive() %>%
+        plot_casos_posibles_r_edad(eje_y = "Casos posibles acumulados")
+    })
+    
     output$plot_fallecidos_Argentina <- renderPlotly({
       fallecidos_reactive() %>%
         plot_fallecidos()
@@ -485,6 +560,16 @@ server <- function(input, output, session){
     output$plot_fallecidos_r_edad_Argentina <- renderPlotly({
       fallecidos_r_edad_reactive() %>%
         plot_fallecidos_r_edad()
+    })
+    
+    output$plot_fallecidos_acumulados_Argentina <- renderPlotly({
+      fallecidos_acumulados_reactive() %>%
+        plot_fallecidos(eje_y = "Fallecidos acumulados")
+    })
+    
+    output$plot_fallecidos_r_edad_acumulados_Argentina <- renderPlotly({
+      fallecidos_r_edad_acumulados_reactive() %>%
+        plot_fallecidos_r_edad(eje_y = "Fallecidos acumulados")
     })
     
     output$plot_positividad_Argentina <- renderPlotly({
@@ -519,6 +604,16 @@ server <- function(input, output, session){
         plot_confirmados_r_edad()
     })
     
+    output$plot_confirmados_acumulados_Provincias <- renderPlotly({
+      confirmados_acumulados_reactive() %>%
+        plot_confirmados()
+    })
+    
+    output$plot_confirmados_r_edad_acumulados_Provincias <- renderPlotly({
+      confirmados_r_edad_acumulados_reactive() %>%
+        plot_confirmados_r_edad()
+    })
+    
     output$plot_casos_posibles_Provincias <- renderPlotly({
       casos_posibles_reactive() %>%
         plot_casos_posibles()
@@ -529,6 +624,16 @@ server <- function(input, output, session){
         plot_casos_posibles_r_edad()
     })
     
+    output$plot_casos_posibles_acumulados_Provincias <- renderPlotly({
+      casos_posibles_acumulados_reactive() %>%
+        plot_casos_posibles()
+    })
+    
+    output$plot_casos_posibles_r_edad_acumulados_Provincias <- renderPlotly({
+      casos_posibles_r_edad_acumulados_reactive() %>%
+        plot_casos_posibles_r_edad()
+    })
+    
     output$plot_fallecidos_Provincias <- renderPlotly({
       fallecidos_reactive() %>%
         plot_fallecidos()
@@ -536,6 +641,16 @@ server <- function(input, output, session){
     
     output$plot_fallecidos_r_edad_Provincias <- renderPlotly({
       fallecidos_r_edad_reactive() %>%
+        plot_fallecidos_r_edad()
+    })
+    
+    output$plot_fallecidos_acumulados_Provincias <- renderPlotly({
+      fallecidos_acumulados_reactive() %>%
+        plot_fallecidos()
+    })
+    
+    output$plot_fallecidos_r_edad_acumulados_Provincias <- renderPlotly({
+      fallecidos_r_edad_acumulados_reactive() %>%
         plot_fallecidos_r_edad()
     })
     
@@ -571,6 +686,16 @@ server <- function(input, output, session){
         plot_confirmados_r_edad()
     })
     
+    output$plot_confirmados_acumulados_AMBA <- renderPlotly({
+      confirmados_acumulados_reactive() %>%
+        plot_confirmados()
+    })
+    
+    output$plot_confirmados_r_edad_acumulados_AMBA <- renderPlotly({
+      confirmados_r_edad_acumulados_reactive() %>%
+        plot_confirmados_r_edad()
+    })
+    
     output$plot_casos_posibles_AMBA <- renderPlotly({
       casos_posibles_reactive() %>%
         plot_casos_posibles()
@@ -581,6 +706,16 @@ server <- function(input, output, session){
         plot_casos_posibles_r_edad()
     })
     
+    output$plot_casos_posibles_acumulados_AMBA <- renderPlotly({
+      casos_posibles_acumulados_reactive() %>%
+        plot_casos_posibles()
+    })
+    
+    output$plot_casos_posibles_r_edad_acumulados_AMBA <- renderPlotly({
+      casos_posibles_r_edad_acumulados_reactive() %>%
+        plot_casos_posibles_r_edad()
+    })
+    
     output$plot_fallecidos_AMBA <- renderPlotly({
       fallecidos_reactive() %>%
         plot_fallecidos()
@@ -588,6 +723,16 @@ server <- function(input, output, session){
     
     output$plot_fallecidos_r_edad_AMBA <- renderPlotly({
       fallecidos_r_edad_reactive() %>%
+        plot_fallecidos_r_edad()
+    })
+    
+    output$plot_fallecidos_acumulados_AMBA <- renderPlotly({
+      fallecidos_acumulados_reactive() %>%
+        plot_fallecidos()
+    })
+    
+    output$plot_fallecidos_r_edad_acumulados_AMBA <- renderPlotly({
+      fallecidos_r_edad_acumulados_reactive() %>%
         plot_fallecidos_r_edad()
     })
     
@@ -613,53 +758,83 @@ server <- function(input, output, session){
     
     #Para deptos:
     output$plot_confirmados_Departamentos <- renderPlotly({
-        confirmados_reactive() %>%
-            plot_confirmados()
+      confirmados_reactive() %>%
+        plot_confirmados()
     })
     
     output$plot_confirmados_r_edad_Departamentos <- renderPlotly({
-        confirmados_r_edad_reactive() %>%
-            plot_confirmados_r_edad()
+      confirmados_r_edad_reactive() %>%
+        plot_confirmados_r_edad()
+    })
+    
+    output$plot_confirmados_acumulados_Departamentos <- renderPlotly({
+      confirmados_acumulados_reactive() %>%
+        plot_confirmados()
+    })
+    
+    output$plot_confirmados_r_edad_acumulados_Departamentos <- renderPlotly({
+      confirmados_r_edad_acumulados_reactive() %>%
+        plot_confirmados_r_edad()
     })
     
     output$plot_casos_posibles_Departamentos <- renderPlotly({
-        casos_posibles_reactive() %>%
-            plot_casos_posibles()
+      casos_posibles_reactive() %>%
+        plot_casos_posibles()
     })
     
     output$plot_casos_posibles_r_edad_Departamentos <- renderPlotly({
-        casos_posibles_r_edad_reactive() %>%
-            plot_casos_posibles_r_edad()
+      casos_posibles_r_edad_reactive() %>%
+        plot_casos_posibles_r_edad()
+    })
+    
+    output$plot_casos_posibles_acumulados_Departamentos <- renderPlotly({
+      casos_posibles_acumulados_reactive() %>%
+        plot_casos_posibles()
+    })
+    
+    output$plot_casos_posibles_r_edad_acumulados_Departamentos <- renderPlotly({
+      casos_posibles_r_edad_acumulados_reactive() %>%
+        plot_casos_posibles_r_edad()
     })
     
     output$plot_fallecidos_Departamentos <- renderPlotly({
-        fallecidos_reactive() %>%
-            plot_fallecidos()
+      fallecidos_reactive() %>%
+        plot_fallecidos()
     })
     
     output$plot_fallecidos_r_edad_Departamentos <- renderPlotly({
-        fallecidos_r_edad_reactive() %>%
-            plot_fallecidos_r_edad()
+      fallecidos_r_edad_reactive() %>%
+        plot_fallecidos_r_edad()
+    })
+    
+    output$plot_fallecidos_acumulados_Departamentos <- renderPlotly({
+      fallecidos_acumulados_reactive() %>%
+        plot_fallecidos()
+    })
+    
+    output$plot_fallecidos_r_edad_acumulados_Departamentos <- renderPlotly({
+      fallecidos_r_edad_acumulados_reactive() %>%
+        plot_fallecidos_r_edad()
     })
     
     output$plot_positividad_Departamentos <- renderPlotly({
-        positividad_reactive() %>%
-            plot_positividad()
+      positividad_reactive() %>%
+        plot_positividad()
     })
     
     output$plot_positividad_r_edad_Departamentos <- renderPlotly({
-        positividad_r_edad_reactive() %>%
-            plot_positividad_r_edad()
+      positividad_r_edad_reactive() %>%
+        plot_positividad_r_edad()
     })
     
     output$plot_letalidad_Departamentos <- renderPlotly({
-        letalidad_reactive() %>%
-            plot_letalidad()
+      letalidad_reactive() %>%
+        plot_letalidad()
     })
     
     output$plot_letalidad_r_edad_Departamentos <- renderPlotly({
-        letalidad_r_edad_reactive() %>%
-            plot_letalidad_r_edad()
+      letalidad_r_edad_reactive() %>%
+        plot_letalidad_r_edad()
     })
     
 }
