@@ -127,8 +127,8 @@ sidebar <- dashboardSidebar(
                ),
       menuItem("Provincias", tabName = "tab_provincias" #icon = icon("argentina-dividida"),
                ),
-      menuItem("AMBA", tabName = "tab_amba" #,icon = icon("amba"),
-               ),
+      #menuItem("AMBA", tabName = "tab_amba" #,icon = icon("amba"),
+      #         ),
       menuItem("Departamentos", tabName = "tab_departamentos" #icon = icon("departamentos"),
                ),
         
@@ -165,9 +165,9 @@ body <- dashboardBody(
             ),
             tabBox_todos("Provincias")
     ),
-    tabItem(tabName = "tab_amba",
-            tabBox_todos("AMBA")
-    ),
+   # tabItem(tabName = "tab_amba",
+    #        tabBox_todos("AMBA")
+   # ),
     tabItem(tabName = "tab_departamentos",
             fluidRow(
               column(
@@ -275,6 +275,7 @@ server <- function(input, output, session){
             filtro_region(base_codigos = cod_prov_depto, region_name = "AMBA") %>%
             confirmados()
         }else if(input$leftsidebar == "tab_departamentos"){
+          validate(need(input$departamento != "", ""))
           datos_reactive() %>%
             filtro_prov(prov = prov_code()) %>%
             filtro_depto(depto = depto_code()) %>%
@@ -309,6 +310,7 @@ server <- function(input, output, session){
             filtro_region( base_codigos = cod_prov_depto, region_name = "AMBA") %>%
             confirmados_r_edad()
         }else if(input$leftsidebar == "tab_departamentos"){
+          validate(need(input$departamento != "", ""))
           datos_reactive() %>%
             filtro_prov(prov = prov_code()) %>%
             filtro_depto(depto = depto_code()) %>%
@@ -343,6 +345,7 @@ server <- function(input, output, session){
             filtro_region( base_codigos = cod_prov_depto, region_name = "AMBA") %>%
             casos_posibles()
         }else if(input$leftsidebar == "tab_departamentos"){
+          validate(need(input$departamento != "", ""))
           datos_reactive() %>%
             filtro_prov(prov = prov_code()) %>%
             filtro_depto(depto = depto_code()) %>%
@@ -377,6 +380,7 @@ server <- function(input, output, session){
             filtro_region( base_codigos = cod_prov_depto, region_name = "AMBA") %>%
             casos_posibles_r_edad()
         }else if(input$leftsidebar == "tab_departamentos"){
+          validate(need(input$departamento != "", ""))
           datos_reactive() %>%
             filtro_prov(prov = prov_code()) %>%
             filtro_depto(depto = depto_code()) %>%
@@ -411,6 +415,7 @@ server <- function(input, output, session){
           filtro_region( base_codigos = cod_prov_depto, region_name = "AMBA") %>%
           fallecidos()
       }else if(input$leftsidebar == "tab_departamentos"){
+        validate(need(input$departamento != "", ""))
         datos_fallecidos_reactive() %>%
           filtro_prov(prov = prov_code()) %>%
           filtro_depto(depto = depto_code()) %>%
@@ -445,6 +450,7 @@ server <- function(input, output, session){
           filtro_region( base_codigos = cod_prov_depto, region_name = "AMBA") %>%
           fallecidos_r_edad()
       }else if(input$leftsidebar == "tab_departamentos"){
+        validate(need(input$departamento != "", ""))
         datos_fallecidos_reactive() %>%
           filtro_depto(depto = depto_code()) %>%
           fallecidos_r_edad()
