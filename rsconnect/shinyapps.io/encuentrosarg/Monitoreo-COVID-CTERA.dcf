@@ -1,0 +1,13 @@
+name: Monitoreo-COVID-CTERA
+title: Monitoreo-COVID-CTERA
+username:
+account: encuentrosarg
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4040439
+bundleId: 4526511
+url: https://encuentrosarg.shinyapps.io/Monitoreo-COVID-CTERA/
+when: 1619549849.04432
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: base.csv|base_downloader.py|base_uploader.sh|LICENSE|README.md|data/Covid19Casos.zip
