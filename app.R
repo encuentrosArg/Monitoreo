@@ -108,12 +108,12 @@ tabBox_todos <- function(titulo_tab_box){
 
 
 
-header <- dashboardHeader(title = "Monitoreo COVID-19 hasta donde llega este texto quiero saber",
+header <- dashboardHeader(title = "Monitoreo COVID-19 CTERA",
     dropdownMenu(
         type = "messages",
         messageItem(
             from = "Admin",
-            message = "Proximamente se agregarán otros"
+            message = "Página en desarrollo constante"
         )
     )
 )
@@ -188,7 +188,16 @@ body <- dashboardBody(
     column(
       width = 12,
       align = "center",
-      img(src='logo_cotera.png', align = "center")
+      img(src='logo_ctera.png', align = "center")
+      )
+    ),
+  fluidRow(
+    column(
+      width = 12,
+      align = "left",
+      p(style = 'padding-left:15px; line-height: 1.7em;', strong('Información:'),'Toda la información fue extraída de el Sistema Integrado de Información Sanatiaria Argentino (SISA), Ministerio de Salud de la Nación.'),
+      p(style = 'padding-left:15px; line-height: 1.7em;','Siendo que la carga de datos al sistema puede demorar varios días, es posible que la información de los últimos 10 días a la fecha actual no esté actualizada.'),
+      p(style = 'padding-left:15px; line-height: 1.7em;','La página está en desarrollo contínuo y es posible que se experimenten errores inesperados.')
       )
     )
   )
@@ -199,7 +208,7 @@ body <- dashboardBody(
 
 
 
-ui <- dashboardPage(header, sidebar, body, title = "Monitoreo COVID-19 COTERA")
+ui <- dashboardPage(header, sidebar, body, title = "Monitoreo COVID-19 CTERA")
 
 
 server <- function(input, output, session){
