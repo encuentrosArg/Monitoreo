@@ -1,5 +1,9 @@
+library(data.table)
 #Preprocesamiento:
-datos <- fread(unzip("data/Covid19Casos.zip", "Covid19Casos.csv"), encoding = "UTF-8", stringsAsFactors = TRUE)
+temp <- tempfile()
+download.file("https://sisa.msal.gov.ar/datos/descargas/covid-19/files/Covid19Casos.zip",temp)
+datos <- fread(unzip(temp, "Covid19Casos.csv"), encoding = "UTF-8", stringsAsFactors = TRUE)
+unlink(temp)
 #Borro columnas que no nos interesan:
 datos <- datos[, -c("residencia_pais_nombre",
       "residencia_provincia_nombre",
@@ -28,5 +32,5 @@ datos <- datos[, -c("carga_provincia_id", "fecha_inicio_sintomas",
                     "fecha_apertura")]
 
 #Lo escribo:
-fwrite(datos, file = "Covid19Casos2021 reducido.csv")
+fwrite(datos, file = "data/Covid19Casos2021 reducido.csv")
 file.remove("Covid19Casos.csv")
