@@ -292,10 +292,10 @@ positividad <- function(base_confirmados, base_casos_posibles){
   p <- merge(relleno, p, by = "fecha_min", all = TRUE)
   p <- p[ , c("conteo.x", "conteo.y") := lapply(.SD, nafill, fill=0), .SDcols = c("conteo.x", "conteo.y")]
   p <- p[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y))]
-  p <- p[, positividad := conteo.x/conteo.y]
+  p <- p[, positividad := 100 * conteo.x/conteo.y]
   p <- p[, c("fecha_min", "positividad")] 
   p %>%
-    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Positividad</b>: {round(positividad,3)}<br>") %>% 
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Positividad</b>: {round(positividad,1)}%<br>") %>% 
              map(htmltools::HTML))
 }
 
@@ -307,10 +307,10 @@ positividad_r_edad <- function(base_confirmados_r_edad, base_casos_posibles_r_ed
   p <- merge(relleno, p, by = c("fecha_min", "r_edad"), all = TRUE)
   p <- p[ , c("conteo.x", "conteo.y") := lapply(.SD, nafill, fill=0), .SDcols = c("conteo.x", "conteo.y")]
   p <- p[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y)), by = "r_edad"]
-  p <- p[, positividad := conteo.x/conteo.y]
+  p <- p[, positividad := 100 * conteo.x/conteo.y]
   p <- p[, c("fecha_min", "r_edad", "positividad")] 
   p  %>%
-    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Positividad</b>: {round(positividad,3)}<br>") %>% 
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_min)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Positividad</b>: {round(positividad,1)}%<br>") %>% 
              map(htmltools::HTML))
 }
 
@@ -322,10 +322,10 @@ letalidad<- function(base_fallecidos, base_casos_posibles){
   l <- merge(relleno, l, by = "fecha_fallecimiento", all = TRUE)
   l <- l[ , c("conteo.x", "conteo.y") := lapply(.SD, nafill, fill=0), .SDcols = c("conteo.x", "conteo.y")]
   l <- l[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y))]
-  l <- l[, letalidad := conteo.x/conteo.y]
+  l <- l[, letalidad := 100 * conteo.x/conteo.y]
   l <- l[, c("fecha_fallecimiento", "letalidad")] 
   l  %>%
-    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Letalidad</b>: {round(letalidad,3)}<br>") %>% 
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Letalidad</b>: {round(letalidad,1)}%<br>") %>% 
              map(htmltools::HTML))
 }
 
@@ -337,10 +337,10 @@ letalidad_r_edad <- function(base_fallecidos_r_edad, base_casos_posibles_r_edad)
   l <- merge(relleno, l, by = c("fecha_fallecimiento", "r_edad"), all = TRUE)
   l <- l[ , c("conteo.x", "conteo.y") := lapply(.SD, nafill, fill=0), .SDcols = c("conteo.x", "conteo.y")]
   l <- l[, c("conteo.x", "conteo.y") := .(cumsum(conteo.x), cumsum(conteo.y)), by = "r_edad"]
-  l <- l[, letalidad := conteo.x/conteo.y]
+  l <- l[, letalidad := 100 * conteo.x/conteo.y]
   l <- l[, c("fecha_fallecimiento", "r_edad", "letalidad")] 
   l %>%
-    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Letalidad</b>: {round(letalidad,3)}<br>") %>% 
+    mutate(label = str_glue("<b>Fecha</b>: {format({as.Date(fecha_fallecimiento)}, format = '%d/%m/%Y')}<br><b>Edad</b>: {r_edad}<br><b>Letalidad</b>: {round(letalidad,1)}%<br>") %>% 
              map(htmltools::HTML))
 }
 

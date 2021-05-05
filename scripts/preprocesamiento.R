@@ -33,19 +33,4 @@ datos <- datos[, -c("carga_provincia_id", "fecha_inicio_sintomas",
                     "fecha_apertura")]
 
 #Lo escribo:
-zipped.csv <- function(df, zippedfile) {
-   # init temp csv
-   temp <- tempfile(fileext=".csv")
-   # write temp csv
-   fwrite(df, file=temp)
-   # zip temp csv
-   zip(zippedfile,temp)
-   # delete temp csv
-   unlink(temp)
-}
-
-temp <- tempfile(fileext=".csv")
-fwrite(datos, file=temp)
-zip("data/Covid19Casos2021 reducido.zip",temp)
-unlink(temp)
-
+fwrite(datos, file = "data/Covid19Casos2021 reducido.csv")

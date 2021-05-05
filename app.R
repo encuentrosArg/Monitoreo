@@ -36,23 +36,32 @@ tabBox_todos <- function(titulo_tab_box){
                            plotly::plotlyOutput(paste0('plot_confirmados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_confirmados_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
-                  ),
+                           plotly::plotlyOutput(paste0('plot_confirmados_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                      align = "center",
+                    "El gráfico de serie de tiempo muestra los casos confirmados por día. Al aumentar la curva se está detectando un aumento de casos para esa fecha en relación a la fecha anterior.")
+                    ), br(),
                   fluidRow(
                     column(width = 6,
                            align = "center",
                            plotly::plotlyOutput(paste0('plot_confirmados_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_confirmados_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
-                  ),
+                           plotly::plotlyOutput(paste0('plot_confirmados_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "La curva va a presentar un comportamiento creciente a medida que los casos confirmados diarios aumenten, mientras que se tornará horizontal a medida que los casos confirmados comiencen a disminuir.")
+                  ), br(),
                   fluidRow(
                     column(width = 6,
                            align = "center",
                            plotly::plotlyOutput(paste0('plot_confirmados_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_confirmados_r_edad_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                           plotly::plotlyOutput(paste0('plot_confirmados_r_edad_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "La curva se confecciona realizando un promedio de los nuevos casos confirmados diarios durante el lapso de tiempo de 14 días previos. Si la curva se mantiene constante o comienza a decrecer, indica que el número de individuos positivos detectados está disminuyendo.")
                   )
          ),
          tabPanel("Casos posibles", 
@@ -62,23 +71,32 @@ tabBox_todos <- function(titulo_tab_box){
                            plotly::plotlyOutput(paste0('plot_casos_posibles_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
-                  ),
+                           plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "El gráfico muestra todos los posibles casos, sin importar el diagnóstico, por día. Si la curva aumenta, indica un aumento de los posibles casos para esa fecha en relación a la fecha anterior.")
+                  ), br(),
                   fluidRow(
                     column(width = 6,
                            align = "center",
                            plotly::plotlyOutput(paste0('plot_casos_posibles_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
-                  ),
+                           plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)) , 
+                    column(width = 12,
+                           align = "center",
+                           "La curva va a presentar un comportamiento creciente a medida que los casos posibles diarios aumenten, mientras que se tornará horizontal a medida que los casos posibles comiencen a disminuir.")
+                  ), br(),
                   fluidRow(
                     column(width = 6,
                            align = "center",
                            plotly::plotlyOutput(paste0('plot_casos_posibles_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                           plotly::plotlyOutput(paste0('plot_casos_posibles_r_edad_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "La curva se confecciona realizando un promedio de los nuevos casos posibles diarios durante el lapso de tiempo de 14 días previos. Si la curva se mantiene constante o comienza a decrecer, indica que el número de casos posibles detectados está disminuyendo.")
                   )
          ),
          tabPanel("Fallecidos", 
@@ -88,23 +106,32 @@ tabBox_todos <- function(titulo_tab_box){
                            plotly::plotlyOutput(paste0('plot_fallecidos_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
-                  ),
+                           plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "El gráfico muestra la cantidad de fallecidos por día. Un aumento de la curva se traduce en una mayor cantidad de fallecidos para esa fecha en relación a la fecha anterior.")
+                  ), br(),
                   fluidRow(
                     column(width = 6,
                            align = "center",
                            plotly::plotlyOutput(paste0('plot_fallecidos_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
-                  ),
+                           plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_acumulados_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "La curva va a presentar un comportamiento creciente a medida que los fallecidos diarios aumenten, mientras que se tornará horizontal a medida que los fallecidos comiencen a disminuir.")
+                  ), br(),
                   fluidRow(
                     column(width = 6,
                            align = "center",
                            plotly::plotlyOutput(paste0('plot_fallecidos_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                           plotly::plotlyOutput(paste0('plot_fallecidos_r_edad_acumulados_14_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "La curva se confecciona realizando un promedio de los nuevos fallecidos diarios durante el lapso de tiempo de 14 días previos. Si la curva se mantiene constante o comienza a decrecer, indica que el número de fallecidos registrados está disminuyendo.")
                   )
          ),
          tabPanel("Positividad", 
@@ -114,7 +141,10 @@ tabBox_todos <- function(titulo_tab_box){
                            plotly::plotlyOutput(paste0('plot_positividad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_positividad_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                           plotly::plotlyOutput(paste0('plot_positividad_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "Es la cantidad de casos positivos sobre el número de diagnósticos. Un valor alto (mayor al 20%) indicaría una tendencia al subdiagnóstico (se registran sólo una porción de los casos reales).")
                   )
          ),
          tabPanel("Letalidad", 
@@ -124,7 +154,10 @@ tabBox_todos <- function(titulo_tab_box){
                            plotly::plotlyOutput(paste0('plot_letalidad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),
                     column(width = 6,
                            align = "center",
-                           plotly::plotlyOutput(paste0('plot_letalidad_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE))  
+                           plotly::plotlyOutput(paste0('plot_letalidad_r_edad_', titulo_tab_box))%>% withSpinner(hide.ui = FALSE)),  
+                    column(width = 12,
+                           align = "center",
+                           "La curva nos muestra la proporción de fallecidos acumulados respecto de los casos confirmados acumulados. Una tendencia creciente nos indicaría que el número de fallecidos está aumentando más rápido que el de casos confirmados o que hay subdiagnóstico.")
                   )
          )
   )}
@@ -217,8 +250,8 @@ body <- dashboardBody(
             p(style = 'padding-left:15px; line-height: 1.2em;', strong('Fallecidos:'),'Número de registros diarios que presentaron una fecha de fallecimiento.'),
             p(style = 'padding-left:15px; line-height: 1.2em;', strong('Acumulados desde fecha incial:'),'Suma de los registros diarios (confirmados, posibles o fallecidos) de todas las fechas anteriores desde una fecha inicial (elegida por el usuario en el selector de fechas) hasta una fecha posterior.'),
             p(style = 'padding-left:15px; line-height: 1.2em;', strong('Acumulados últimos 14 días:'),'Suma de los registros diarios (confirmados, posibles o fallecidos) de los 14 días anteriores a la fecha de interés inclusive.'),
-            p(style = 'padding-left:15px; line-height: 1.2em;', strong('Positividad:'),'Proporción del número de registros confirmados acumulados hasta la fecha en el número de registros totales acumulados hasta la fecha:<br> Casos confirmados acumulados / Casos posibles acumulados.'),
-            p(style = 'padding-left:15px; line-height: 1.2em;', strong('Letalidad:'),'Proporción del número de registros fallecidos acumulados hasta la fecha del número de registros confirmados acumulados hasta la fecha:<br> Fallecidos acumulados / Casos confirmados acumulados.'),
+            p(style = 'padding-left:15px; line-height: 1.2em;', strong('Positividad:'),HTML('Proporción del número de registros confirmados acumulados hasta la fecha en el número de registros totales acumulados hasta la fecha:<br> Casos confirmados acumulados / Casos posibles acumulados.')),
+            p(style = 'padding-left:15px; line-height: 1.2em;', strong('Letalidad:'),HTML('Proporción del número de registros fallecidos acumulados hasta la fecha del número de registros confirmados acumulados hasta la fecha:<br> Fallecidos acumulados / Casos confirmados acumulados.')),
             p(style = 'padding-left:15px; line-height: 1.2em;', strong('Rangos de edad:'),'Además, todas las métricas previamente mencionadas fueron calculadas para los rangos de edades de 0-17, 18-39, 40-59 y 60 o más años. Aquellos individuos clasificados como "N/R" no presentaron información sobre su edad')
             
             
