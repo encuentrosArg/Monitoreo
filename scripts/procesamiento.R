@@ -1,7 +1,7 @@
 #library(data.table)
 #library(dplyr)
-datos <- fread(unzip("data/Covid19Casos2021 reducido.zip", "Covid19Casos2021 reducido.csv"), encoding = "UTF-8", stringsAsFactors = TRUE)
-#datos <- fread("data/Covid19Casos2021 reducido.csv", encoding = "UTF-8", stringsAsFactors = TRUE)
+#datos <- fread(unzip("data/Covid19Casos2021 reducido.zip", "Covid19Casos2021 reducido.csv"), encoding = "UTF-8", stringsAsFactors = TRUE)
+datos <- fread("data/Covid19Casos2021 reducido.csv", encoding = "UTF-8", stringsAsFactors = TRUE)
 
 #Borro columnas que no nos interesan:
 #datos <- datos[, -c("residencia_pais_nombre",
@@ -20,10 +20,6 @@ datos <- fread(unzip("data/Covid19Casos2021 reducido.zip", "Covid19Casos2021 red
 
 #Modifico otras variables ----
 
-#Convierto meses y edad a edad todo en años
-datos$edad <- round(fifelse(datos$edad_años_meses == "Meses", datos$edad/12, as.numeric(datos$edad)),2)
-datos <- datos[, -c("edad_años_meses")]
-
 #Agrego rangos de edad
 datos[, r_edad := fcase(edad <= 17 , "0-17",
                             edad > 17 & edad <= 39, "18-39",
@@ -35,3 +31,5 @@ datos[, r_edad := fcase(edad <= 17 , "0-17",
 cod_prov_depto <- fread("data/codigo_prov_depto.csv", encoding = "UTF-8", stringsAsFactors = TRUE)
 #Cuando se necesite se joinea con esta base
 
+#Poblaciones deptos:
+poblaciones <- fread("data/poblacion_deptos.csv", encoding = "UTF-8")

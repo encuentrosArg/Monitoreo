@@ -298,7 +298,8 @@ plot_positividad <- function(base){
   g <- base %>%
     ggplot(aes(x = fecha_min, y = positividad, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Positividad (casos confirmado por cada caso posible)")
+    labs(x = "Fecha", y = "Positividad (% de casos confirmados por casos posibles)") +
+    theme(axis.title.y = element_text(size = 10))
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
     plotly::config(locale = "es")
@@ -312,8 +313,9 @@ plot_positividad_r_edad <- function(base){
   g <- base %>%
     ggplot(aes(x = fecha_min, y = positividad, col = r_edad, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Positividad (casos confirmado por cada caso posible)") +
-    scale_color_discrete(name = "Rango de edades")
+    labs(x = "Fecha", y = "Positividad (% de casos confirmados por casos posibles)") +
+    scale_color_discrete(name = "Rango de edades") +
+    theme(axis.title.y = element_text(size = 10))
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
     plotly::config(locale = "es")
@@ -328,7 +330,8 @@ plot_letalidad <- function(base){
   g <- base %>%
     ggplot(aes(x = fecha_fallecimiento, y = letalidad, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Letalidad (fallecidos por cada caso confirmado)")
+    labs(x = "Fecha", y = "Letalidad (% de fallecidos por casos confirmados)") +
+    theme(axis.title.y = element_text(size = 10))
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
     plotly::config(locale = "es")
@@ -342,8 +345,9 @@ plot_letalidad_r_edad <- function(base){
   g <- base %>%
     ggplot(aes(x = fecha_fallecimiento, y = letalidad, col = r_edad, text = label)) +
     geom_line() +
-    labs(x = "Fecha", y = "Letalidad (fallecidos por cada caso confirmado)") +
-    scale_color_discrete(name = "Rango de edades")
+    labs(x = "Fecha", y = "Letalidad (% de fallecidos por casos confirmados)") +
+    scale_color_discrete(name = "Rango de edades") +
+    theme(axis.title.y = element_text(size = 10))
   
   ggplotly(g, tooltip = 'text', dynamicTicks = TRUE) %>%
     plotly::config(locale = "es")
