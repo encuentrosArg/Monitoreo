@@ -344,3 +344,30 @@ letalidad_r_edad <- function(base_fallecidos_r_edad, base_casos_posibles_r_edad)
              map(htmltools::HTML))
 }
 
+
+#Razón e incidencia:
+razon_incidencia <- function(base){
+  c <- base
+  prov_code <- base[1, residencia_provincia_id]
+  c <- c[clasificacion_resumen == "Confirmado" ,][, dias := fcase(fecha_min < max(fecha_min) - 14, "Anteriores",
+                                                                  fecha_min >= max(fecha_min) - 14, "Ultimos")][, .(conteo = .N), by = .(dias, residencia_departamento_id)]
+  c <- dcast(c, ... ~ dias, value.var = "conteo")[, razon := round(Ultimos / Anteriores, 2)]
+  c <- merge(poblaciones[province_code == prov_code], c[, -c("Anteriores")], by.x = "department_code", by.y = "residencia_departamento_id", all.x = TRUE)
+  c[, incidencia := round(100000 * Ultimos / department_poblacion, 2)]
+  c[razon == Inf, "razon"] <- NA 
+  c <- c[, .(department_name, razon, incidencia)] %>% arrange(department_name)
+  if(prov_code == 2){
+    x <- paste("Comuna", 1:15)
+    c <- c %>%
+      slice(match(x, department_name))
+    names(c) <- c("Comuna", "Razón", "Incidencia")
+    c
+  }else if(prov_code == 6){
+    names(c) <- c("Partido", "Razón", "Incidencia")
+    c
+  }else{
+    names(c) <- c("Departamento", "Razón", "Incidencia")
+    c
+  }
+  
+}

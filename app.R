@@ -7,6 +7,7 @@ library(data.table)
 library(plotly)
 library(shinycssloaders)
 library(dashboardthemes)
+library(DT)
 
 options(encoding = 'UTF-8')
 options(spinner.color = "#000000", spinner.type = 6, spinner.color.background = "#ffffff", spinner.size = 0.5)
@@ -198,7 +199,8 @@ sidebar <- dashboardSidebar(
                              end = lubridate::today(),
                              language = "es",
                              weekstart = 1),
-              menuItem("Información", tabName = "tab_info")
+              menuItem("Información", tabName = "tab_info"),
+              menuItem("Razón e Incidencia", tabName = "tab_razon_incidencia")
   )
 )
 
@@ -255,7 +257,18 @@ body <- dashboardBody(
             p(style = 'padding-left:15px; line-height: 1.2em;', strong('Rangos de edad:'),'Además, todas las métricas previamente mencionadas fueron calculadas para los rangos de edades de 0-17, 18-39, 40-59 y 60 o más años. Aquellos individuos clasificados como "N/R" no presentaron información sobre su edad')
             
             
-    )
+    ),
+    tabItem(tabName = "tab_razon_incidencia",
+            fluidRow(
+              column(
+                width = 12,
+                align = "center",
+                pickerInput("tab_razon_incidencia_picker", "Seleccionar provincia", choices = as.character(sort(unique(cod_prov_depto$prov_name))), options = list("live-search" = TRUE, `actions-box` = TRUE), multiple = FALSE),
+                DTOutput("tabla_razon_incidencia") %>% withSpinner(hide.ui = FALSE)
+              )
+            )
+            )
+    
   ),
   fluidRow(
     column(
@@ -287,6 +300,17 @@ ui <- dashboardPage(header, sidebar, body, title = "Monitoreo COVID-19 CTERA")
 server <- function(input, output, session){
   
   #Defino los codigos de provincia y depto elegidos ----
+  
+  cod_prov_filtrado_tab_razon_incidencia <- reactive({
+    cod_prov_depto[prov_name == input$tab_razon_incidencia_picker,] %>%
+      arrange()
+  })
+  
+  prov_code_tab_razon_incidencia <- reactive({
+    
+    cod_prov_filtrado_tab_razon_incidencia()$prov_code[1]
+    
+  })
   
   cod_prov_filtrado_tab_prov <- reactive({
     cod_prov_depto[prov_name == input$tab_prov_picker,] %>%
@@ -1121,6 +1145,18 @@ server <- function(input, output, session){
       plot_letalidad_r_edad()
   })
   
+  
+  ######################### Razón Incidencia ###################################
+  
+  output$tabla_razon_incidencia <- renderDT(
+    datos %>%
+      filtro_fecha(max(datos$fecha_min) - 29, max(datos$fecha_min)) %>%
+      filtro_prov(prov = prov_code_tab_razon_incidencia()) %>%
+      razon_incidencia(),
+    options = list(pageLength = -1, info = FALSE, dom = "t"
+                  # lengthMenu = list(c(-1, 10, 20, 50, 100), c("Todas", "10", "20", "50", "100"))
+                   )
+  )
 }
 
 # Run the application 
