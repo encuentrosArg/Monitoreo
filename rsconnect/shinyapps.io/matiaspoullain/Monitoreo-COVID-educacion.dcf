@@ -5,6 +5,6 @@ account: matiaspoullain
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4013647
-bundleId: 4613185
+bundleId: 4801124
 url: https://matiaspoullain.shinyapps.io/Monitoreo-COVID-educacion/
-when: 1621371189.57153
+when: 1625780234.95085

@@ -5,6 +5,6 @@ account: encuentrosarg
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4040439
-bundleId: 4613252
+bundleId: 4801132
 url: https://encuentrosarg.shinyapps.io/Monitoreo-COVID-CTERA/
-when: 1621372474.21044
+when: 1625780457.30503

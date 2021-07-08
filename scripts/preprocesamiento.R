@@ -59,7 +59,7 @@ datos <- datos[, -c("id_evento_caso")]
 datos[, r_edad := fcase(edad <= 17 , "0-17",
                         edad > 17 & edad <= 39, "18-39",
                         edad > 39 & edad <= 59, "40-59",
-                        edad > 59, "60 o más",
+                        edad > 59, "60 o mas",
                         default = "N/R")]
 
 #Si quiero guardar la base cruda poco procesada:
