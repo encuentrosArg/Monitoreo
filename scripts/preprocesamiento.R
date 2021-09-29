@@ -62,6 +62,14 @@ datos[, r_edad := fcase(edad <= 17 , "0-17",
                         edad > 59, "60 o mas",
                         default = "N/R")]
 
+datos2 <- datos[edad <= 17 & edad >= 3, ]
+datos2[, r_edad := fcase(edad <= 12 , "3-12",
+                       edad > 12, "12-17")]
+
+datos <- rbind(datos, datos2)
+
+rm(datos2)
+
 #Si quiero guardar la base cruda poco procesada:
 #fwrite(datos, file = "data/Covid19Casos2021 reducido.csv")
 

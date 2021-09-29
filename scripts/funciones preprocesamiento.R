@@ -2,7 +2,7 @@
 cod_prov_depto <- fread("data/codigo_prov_depto.csv", encoding = "UTF-8", stringsAsFactors = TRUE)
 
 #Objetos y funciones utiles ----
-niveles_r_edad <- c("0-17", "18-39", "40-59", "60 o mas", "N/R")
+niveles_r_edad <- c("3-12", "12-17", "0-17", "18-39", "40-59", "60 o mas", "N/R")
 fecha_minima <- as.Date("2021-01-01")
 fecha_maxima <- max(datos$fecha_min)
 
