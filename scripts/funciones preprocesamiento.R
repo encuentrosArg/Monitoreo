@@ -112,7 +112,7 @@ base_grande_r_edad <- function(base){
 #Tendra toda la info por prov, depto y fecha_min
 
 base_grande <- function(base){
-  c <- base[, .(confirmados = sum(confirmados),
+  c <- base[!r_edad %in% c("3-12", "12-17"), .(confirmados = sum(confirmados),
                 confirmados_acumulados = sum(confirmados_acumulados),
                 confirmados_14 = sum(confirmados_14),
                 casos_posibles = sum(casos_posibles),
